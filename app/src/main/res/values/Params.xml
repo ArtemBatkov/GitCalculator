@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+    <!--TextView adjust-->
+    <string name="TextView_param_DefaultText">0</string>
+    <dimen name="TextView_param_LftMar">1dp</dimen>
+    <dimen name="TextView_param_RhtMar">50dp</dimen>
+    <dimen name="TextView_param_RhtPad">10dp</dimen>
+    <dimen name="TextView_param_TxtSize">45sp</dimen>
+    <dimen name="TextView_param_TopMar">28dp</dimen>
+
+    <!--Back (image button) adjust-->
+    <dimen name="Back_width">45dp</dimen>
+    <dimen name="Back_height">55dp</dimen>
+
+    <!--Nums (buttons) adjust-->
+    <dimen name="Nums_txtsize">60sp</dimen>
+
+    <dimen name="Num0_mrgnstrt">50dp</dimen>
+    <dimen name="Num0_mrgnbottom">20dp</dimen>
+    <dimen name="Num0_mrgntop">10dp</dimen>
+
+    <dimen name="Num1_mrgntop">10dp</dimen>
+    <dimen name="Num1_mrgnlft">20dp</dimen>
+
+    <!--Operators (buttons) adjust-->
+    <dimen name="SpaceBetweenOperators">0.5dp</dimen>
+
+    <dimen name="Plus_TxtSize">35sp</dimen>
+    <dimen name="Plus_mrgnstrt">5dp</dimen>
+    <dimen name="Plus_mrgnbottom">15dp</dimen>
+
+    <dimen name="Minus_TxtSize">@dimen/Plus_TxtSize_normal</dimen>
+
+    <dimen name="Mult_TxtSize">@dimen/Plus_TxtSize_normal</dimen>
+
+    <dimen name="Divide_TxtSize">@dimen/Plus_TxtSize_normal</dimen>
+
+
+    <!--Brackets (buttons) adjust-->
+    <dimen name="Brackets_TxtSize">50sp</dimen>
+    <dimen name="Brackets_mrgnlft">5dp</dimen>
+    <dimen name="Brackets_mrgntop">5dp</dimen>
+    <dimen name="Brackets_mrgnrght">5dp</dimen>
+    <dimen name="Brackets_mrgnbottom">5dp</dimen>
+
+
+
+    <!--Power of xY (buttons) adjust-->
+    <dimen name="Power_TxtSize">22sp</dimen>
+    <dimen name="Power_mrgntop">10dp</dimen>
+    <dimen name="Power_mrgnrht">5dp</dimen>
+    <dimen name="Power_mrgnbottom">10dp</dimen>
+
+    <!--PlusMinus (buttons) adjust-->
+    <dimen name="PlusMinus_TxtSize">40dp</dimen>
+    <dimen name="PlusMinus_mrgntop">10dp</dimen>
+    <dimen name="PlusMinus_mrgnbottom">10dp</dimen>
+</resources>
