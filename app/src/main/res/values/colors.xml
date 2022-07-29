@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_200">#8616ba</color>
+    <color name="purple_700">#FF000000</color> //underhead
+    <color name="purple_500">#CD2FA3</color> //head
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF000000</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+
+    <color name="MainBg1">#1a1e1b</color>
+    <color name="MainBg2">#101310</color>
+    <color name="MainBgC">#1e201d</color>
+    /*
+    #422E2E
+    #3C1C1C
+    #DA000000
+    */
+
+
+
+
+    <color name="Logo_text">#FFFFFFFF</color>
+
+
+    <color name="btns_param_color">#1843E3</color>
+    <color name="btns_param_color_stroke">#000000</color>
+
+    <color name="plus_param_color_text">#353232</color>
+    <color name="plus_param_color_stroke">#5E5A5A</color>
+
+    <color name="brackets_color_back">#67CEDF</color>
+
+    <color name="equal_color">#9123FF</color>
+</resources>
