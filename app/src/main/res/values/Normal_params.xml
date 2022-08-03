@@ -3,12 +3,11 @@
 <resources>
     <!--TextView adjust-->
     <string name="TextView_param_DefaultText_normal">0</string>
-    <dimen name="TextView_height_normal">60dp</dimen>
     <dimen name="TextView_param_LftMar_normal">1dp</dimen>
     <dimen name="TextView_param_RhtMar_normal">50dp</dimen>
     <dimen name="TextView_param_RhtPad_normal">10dp</dimen>
     <dimen name="TextView_param_TxtSize_normal">35sp</dimen>
-    <dimen name="TextView_param_TopMar_normal">28dp</dimen>
+    <dimen name="TextView_param_TopMar_normal">5dp</dimen>
     <dimen name="TextView_padding_normal">5dp</dimen>
 
     <!--Back (image button) adjust-->
@@ -17,13 +16,25 @@
 
     <!--Nums (buttons) adjust-->
     <dimen name="Nums_txtsize_normal">70sp</dimen>
+    <dimen name="Fx_txtsize_normal">50sp</dimen>
+    <string name="Fx_txt">F<sub><small>x</small></sub></string>
 
-    <dimen name="Num0_mrgnstrt_normal">45dp</dimen>
-    <dimen name="Num0_mrgnbottom_normal">20dp</dimen>
+    <string name="AC_txt">AC</string>
+
+    <string name="Sin_txt"><small>sin</small></string>
+    <string name="Cos_txt"><small>cos</small></string>
+    <string name="Tg_txt"><small>tg</small></string>
+    <string name="Ctg_txt"><small>ctg</small></string>
+
+    <dimen name ="txtsize_functions_normal">50sp</dimen>
+
+    <dimen name="Num0_mrgnstrt_normal">10dp</dimen>
+    <dimen name="Num0_mrgnbottom_normal">10dp</dimen>
     <dimen name="Num0_mrgntop_normal">10dp</dimen>
 
     <dimen name="Num1_mrgntop_normal">10dp</dimen>
     <dimen name="Num1_mrgnlft_normal">20dp</dimen>
+
 
     <!--Operators (buttons) adjust-->
     <dimen name="SpaceBetweenOperators_normal">0.5dp</dimen>
@@ -39,6 +50,7 @@
     <dimen name="Mult_TxtSize_normal">@dimen/Plus_TxtSize_normal</dimen>
 
     <dimen name="Divide_TxtSize_normal">@dimen/Plus_TxtSize_normal</dimen>
+
 
 
     <!--Brackets (buttons) adjust-->

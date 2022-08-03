@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="purple_200">#8616ba</color>
-    <color name="purple_700">#FF000000</color> //underhead
-    <color name="purple_500">#CD2FA3</color> //head
+    <color name="purple_700">#FF000000</color>
+    //underhead
+    <color name="purple_500">#CD2FA3</color>
+    //head
     <color name="teal_200">#FF03DAC5</color>
     <color name="teal_700">#FF000000</color>
     <color name="black">#FF000000</color>
@@ -18,9 +20,7 @@
     #DA000000
     */
 
-
-
-
+    <color name="TextView_color">#B4A6B6</color>
     <color name="Logo_text">#FFFFFFFF</color>
 
 
@@ -33,4 +33,8 @@
     <color name="brackets_color_back">#67CEDF</color>
 
     <color name="equal_color">#9123FF</color>
+    <color name="light_blue_400">#FF29B6F6</color>
+    <color name="light_blue_600">#FF039BE5</color>
+    <color name="gray_400">#FFBDBDBD</color>
+    <color name="gray_600">#FF757575</color>
 </resources>

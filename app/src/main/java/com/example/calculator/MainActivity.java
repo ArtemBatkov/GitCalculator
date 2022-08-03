@@ -2,48 +2,50 @@ package com.example.calculator;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.calculator.R;
+import  com.google.android.material.color.MaterialColors;
+
 import android.annotation.SuppressLint;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.sax.EndElementListener;
+import android.support.v4.os.IResultReceiver;
 import android.text.method.ScrollingMovementMethod;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import java.lang.invoke.LambdaConversionException;
+import java.lang.reflect.Type;
 import java.util.ArrayList;
+import java.util.Set;
 
 public class MainActivity extends AppCompatActivity {
-    //class R позволяет находить айди, файлы, объекты,  и куча куча всего в проекте
-//        resultTxtView = findViewById(R.id.textView); // присваиваем переменным существующие кнопки из дизайна
-//        val1 = findViewById(R.id.number_field_1);
-//        val2 = findViewById(R.id.number_field_2);
-//        btn = findViewById(R.id.addBtn);
-//
-//        btn.setOnClickListener(new View.OnClickListener() { // OnClickListener -- анонимный класс
-//            @Override
-//            public void onClick(View view) {
-//                float num1 = Float.parseFloat(val1.getText().toString());
-//                float num2 = Float.parseFloat(val2.getText().toString());
-//                float res = num1 + num2;
-//                resultTxtView.setText(String.valueOf(res));
-//            }
-//        });
-
-
-
 
     private TextView MainScreen;
-    private Button Num0,Num1,Num2,Num3,Num4,Num5,Num6,Num7,Num8,Num9,Plus,Minus,Mult,Divide,PlusMinus,PowerOf,OpenBracket,CloseBracket,Dot,Equal;
-    private ImageButton Back;
+    private Button Num0,Num1,Num2,Num3,Num4,Num5,Num6,Num7,Num8,Num9,Plus,Minus,Mult,Divide,
+            Percent, Square, Factor,PowerOf,OpenBracket,CloseBracket,Dot,Fx,C,Equal,
+            sin,cos, tg, ctg,
+            pi,exp,log,ln;
+
+    private ImageView Back;
+    private static LinearLayout layout_Fx,_789_,_456_,_123_,_0_,functions, _Trigonometry_;
     private String MainScreenText = "0";
     private ArrayList <String> OperatorBuffer = new ArrayList<String>(){
         {
             add("+"); add("-"); add("*"); add("/"); add("±"); add("(");add(")");add("^");
         }
     };
+
+    private ArrayList <LinearLayout> layouts = new ArrayList<LinearLayout>(){};
+
 
 
     public  ArrayList getOperatorList()
@@ -90,15 +92,96 @@ public class MainActivity extends AppCompatActivity {
         MainScreenText = "0";
         UpdateText();
     }
+
+    public void ShowInfo(String text){
+        Toast.makeText(this, text, Toast.LENGTH_LONG).show();
+    }
+
+
+
+    public void SetWeight(LinearLayout layout, int weight)
+    {
+        LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT,LinearLayout.LayoutParams.WRAP_CONTENT);
+        params.weight = weight;
+        layout.setLayoutParams(params);
+        params = null;
+    }
+
+    public void SetDefaultWeight(){
+        LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT,LinearLayout.LayoutParams.WRAP_CONTENT);
+        params.weight = 1; // default
+        _0_.setLayoutParams(params);
+        _123_.setLayoutParams(params);
+        _456_.setLayoutParams(params);
+        _789_.setLayoutParams(params);
+        layout_Fx.setLayoutParams(params);
+        params = null;
+    }
+
+
+    public void ShowLayout(LinearLayout layout)
+    {
+        layout.setVisibility(View.VISIBLE);
+    }
+
+    public void HideLayout(LinearLayout layout) {
+        layout.setVisibility(View.GONE);
+    }
+
+    public void ShowFunctions(){
+        if(functions.getVisibility() == View.VISIBLE){ //hide functions, but show nums
+            SetDefaultWeight();
+            for(int i = 0; i < layouts.size(); i++)
+                ShowLayout(layouts.get(i));
+            HideLayout(functions);
+
+
+        }
+        else{//show functions, but hide nums
+            for(int i = 0; i < layouts.size(); i++)
+                HideLayout(layouts.get(i));
+            SetWeight(layout_Fx,1);
+            SetWeight(functions,4);
+            ShowLayout(functions);
+            AlignTrigonomIconSize();
+        }
+    }
+
+    private void AlignTrigonomIconSize(){
+        LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT,LinearLayout.LayoutParams.WRAP_CONTENT);
+        params.height = Num0.getHeight();
+        params.width = Num0.getWidth();
+        params.leftMargin = 0;
+        params.rightMargin = 0;
+        params.bottomMargin = 0;
+        params.topMargin = 0;
+        PowerOf.setLayoutParams(params);
+        Percent.setLayoutParams(params);
+        Square.setLayoutParams(params);
+        Factor.setLayoutParams(params);
+        sin.setLayoutParams(params);
+        cos.setLayoutParams(params);
+        tg.setLayoutParams(params);
+        ctg.setLayoutParams(params);
+        log.setLayoutParams(params);
+        ln.setLayoutParams(params);
+        exp.setLayoutParams(params);
+        pi.setLayoutParams(params);
+        params = null;
+    }
+
+
+
+
     @SuppressLint("ClickableViewAccessibility")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        //Работает в момент запуска активити
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
 
 
+//        Back.setImageResource(R.drawable.back);
 
         MainScreen = findViewById(R.id.MainScreen);
 //        MainScreen.setSelected(true);
@@ -116,6 +199,7 @@ public class MainActivity extends AppCompatActivity {
         Num9 = findViewById(R.id.Num9);
 
         Back = findViewById(R.id.Back);
+        C = findViewById(R.id.C);
         Dot = findViewById(R.id.Dot);
         OpenBracket = findViewById(R.id.OpenBracket);
         CloseBracket = findViewById(R.id.CloseBracket);
@@ -125,8 +209,24 @@ public class MainActivity extends AppCompatActivity {
         Minus = findViewById(R.id.Minus);
         Mult = findViewById(R.id.Multiply);
         Divide = findViewById(R.id.Divide);
-        PlusMinus = findViewById(R.id.PlusMinus);
-        PowerOf = findViewById(R.id.XPWRY);
+        Fx = findViewById(R.id.Fx);
+        PowerOf = findViewById(R.id.PowerOf);
+        Percent = findViewById(R.id.Percent);
+        Square = findViewById(R.id.Square);
+        Factor = findViewById(R.id.Factor);
+
+        sin = findViewById(R.id.Sin);
+        cos =  findViewById(R.id.Cos);
+        tg =  findViewById(R.id.Tg);
+        ctg = findViewById(R.id.CTg);
+
+        pi =  findViewById(R.id.Pi);
+        exp =  findViewById(R.id.Exp);
+        log =  findViewById(R.id.Log);
+        ln =  findViewById(R.id.Ln);
+
+
+
         SyntaxCheck SyntaxHandle = new SyntaxCheck(MainActivity.this);
 
         Parse ParseHandle = new Parse(MainActivity.this);
@@ -270,55 +370,55 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        PowerOf.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                String symbol = "^";
-                int len = MainScreenText.length();
-                if (SyntaxHandle.IsLastSymbolOperator())
-                {
-                    if(!SyntaxHandle.IsSymbolTheSameAsPrevious(symbol)) SyntaxHandle.ChangeLastOperatorForNew(symbol);
-                }
-                else setMainScreenText(symbol);
-            }
-        });
+//        PowerOf.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                String symbol = "^";
+//                int len = MainScreenText.length();
+//                if (SyntaxHandle.IsLastSymbolOperator())
+//                {
+//                    if(!SyntaxHandle.IsSymbolTheSameAsPrevious(symbol)) SyntaxHandle.ChangeLastOperatorForNew(symbol);
+//                }
+//                else setMainScreenText(symbol);
+//            }
+//        });
 
-        PlusMinus.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                boolean isDigit = SyntaxHandle.IsNumeric(MainScreenText);
-                Number value = 0;
-                value = SyntaxHandle.MakeNegative();
-                String PreviousSymbol;
-                String PenultimateSymbol;
-
-                if (value.doubleValue() == Double.MAX_VALUE) { // sign changer
-                    return;
-                }
-                else {
-                    if (isDigit) { //One Digit
-                        ClearAll();
-                        setMainScreenText(String.valueOf(value));
-                    } else { // Equation
-                        PreviousSymbol = SyntaxHandle.getPreviousSymbol();
-                        PenultimateSymbol = SyntaxHandle.getPenultimateSymbol();
-
-                        if (PreviousSymbol.equals("-") && (value.intValue() > 0)) {
-                            ClearLastSymbol();
-                            if (!(PenultimateSymbol.equals("*")||PenultimateSymbol.equals("/")||PenultimateSymbol.equals("^"))) setMainScreenText("+"); //delete "+" before *,/,^
-                            setMainScreenText(String.valueOf(value));
-                        }
-                        else if (PreviousSymbol.equals("+") && (value.intValue() < 0)) {
-                            ClearLastSymbol();
-                            setMainScreenText(String.valueOf(value));
-                        }
-                        else {
-                            setMainScreenText(String.valueOf(value));
-                        }
-                    }
-                }
-            }
-        });
+//        PlusMinus.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                boolean isDigit = SyntaxHandle.IsNumeric(MainScreenText);
+//                Number value = 0;
+//                value = SyntaxHandle.MakeNegative();
+//                String PreviousSymbol;
+//                String PenultimateSymbol;
+//
+//                if (value.doubleValue() == Double.MAX_VALUE) { // sign changer
+//                    return;
+//                }
+//                else {
+//                    if (isDigit) { //One Digit
+//                        ClearAll();
+//                        setMainScreenText(String.valueOf(value));
+//                    } else { // Equation
+//                        PreviousSymbol = SyntaxHandle.getPreviousSymbol();
+//                        PenultimateSymbol = SyntaxHandle.getPenultimateSymbol();
+//
+//                        if (PreviousSymbol.equals("-") && (value.intValue() > 0)) {
+//                            ClearLastSymbol();
+//                            if (!(PenultimateSymbol.equals("*")||PenultimateSymbol.equals("/")||PenultimateSymbol.equals("^"))) setMainScreenText("+"); //delete "+" before *,/,^
+//                            setMainScreenText(String.valueOf(value));
+//                        }
+//                        else if (PreviousSymbol.equals("+") && (value.intValue() < 0)) {
+//                            ClearLastSymbol();
+//                            setMainScreenText(String.valueOf(value));
+//                        }
+//                        else {
+//                            setMainScreenText(String.valueOf(value));
+//                        }
+//                    }
+//                }
+//            }
+//        });
 
         OpenBracket.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -359,7 +459,12 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-
+        C.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ClearAll();
+            }
+        });
 
 
         Back.setOnClickListener(new View.OnClickListener() {
@@ -369,24 +474,18 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        Back.setOnTouchListener(new View.OnTouchListener() {
-            long start = 0;
+
+        Fx.setOnClickListener(new View.OnClickListener() {
             @Override
-            public boolean onTouch(View view, MotionEvent motionEvent) {
-                switch (motionEvent.getAction()) {
-                    case (MotionEvent.ACTION_DOWN):
-                        start = System.currentTimeMillis();
-                        ClearLastSymbol();
-                        break;
-                case (MotionEvent.ACTION_UP):
-                if ((System.currentTimeMillis() - start) / 1000 >= 1) {
-                    ClearAll();
-                    break;
-                }
-            }
-            return true;
+            public void onClick(View view) {
+//                ShowInfo(((Button) view).getText().toString());
+                ShowFunctions();
             }
         });
+
+
+
+
 
 
         Equal.setOnClickListener(new View.OnClickListener() {
