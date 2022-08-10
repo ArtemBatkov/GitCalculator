@@ -1,4 +1,4 @@
-package com.example.calculator;
+package com.HARDroid.calculator;
 
 public class SyntaxCheck {
 
@@ -53,6 +53,7 @@ public class SyntaxCheck {
     }
 
     public  boolean IsOperator(String symbol) { return mainActivity.getOperatorList().contains(symbol); }
+    public  boolean IsUnaryOperator(String symbol) { return mainActivity.getUnaryOperatorList().contains(symbol); }
 
     public boolean IsLastSymbolOperator(){
         getCurrentText();

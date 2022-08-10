@@ -2,33 +2,40 @@
 
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/MainBackGround"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:weightSum="100"
-    tools:context=".MainActivity">
+    tools:context="com.HARDroid.calculator.MainActivity">
 
 
     <LinearLayout
+        android:id = "@+id/lyt_MainScreen"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="15"
         android:weightSum="100"
-        android:layout_marginTop="10dp"
-        android:layout_marginStart="1dp"
-        android:layout_marginEnd="1dp">
+        android:layout_marginBottom="@dimen/lyt_MainScreen_MarginBottom_normal"
+        android:layout_marginTop="@dimen/lyt_MainScreen_MarginTop_normal"
+        android:layout_marginStart="@dimen/lyt_MainScreen_MarginStart_normal"
+        android:layout_marginEnd="@dimen/lyt_MainScreen_MarginEnd_normal">
+
 
         <TextView
             android:id="@+id/MainScreen"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="90"
-            android:background="@color/TextView_color"
+            android:background="@drawable/text_view_circle"
             android:bufferType="editable"
             android:ellipsize="start"
             android:layout_gravity="center"
+            android:paddingEnd="@dimen/TextView_param_EndPad_normal"
             android:fontFamily="sans-serif"
             android:scrollHorizontally="true"
+            android:layout_marginStart="@dimen/TextView_param_StartMarg_normal"
             android:singleLine="true"
             android:text="@string/TextView_param_DefaultText_normal"
             android:textAlignment="viewEnd"
@@ -38,20 +45,21 @@
             tools:ignore="RtlCompat" />
 
 
-
-
         <ImageView
             android:id="@+id/Back"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_gravity="center"
+            android:layout_marginEnd="@dimen/Back_MarginEnd_normal"
             android:layout_weight="10"
+            android:alpha="@dimen/Back_Opacity"
+            android:background="@drawable/back_view_circle"
             android:clickable="true"
-            android:contentDescription="@string/Fx_txt"
             android:focusable="true"
-            android:scaleType="fitXY"
+            android:padding="@dimen/Back_Padding_normal"
+            android:scaleType="fitCenter"
             android:src="@drawable/back"
-            tools:ignore="TouchTargetSizeCheck" />
+            tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
     </LinearLayout>
 
 
@@ -66,67 +74,98 @@
 
         <!--f(x) ( ) /-->
         <LinearLayout
-            android:id = "@+id/linear_layout_Fx"
+            android:id="@+id/linear_layout_Fx"
             android:layout_width="match_parent"
+            android:orientation="horizontal"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:orientation="horizontal"
-            android:gravity="center_horizontal|center_vertical"
-            android:weightSum="4">
+            android:weightSum="4"
+            android:layout_alignParentBottom="true"
+            android:gravity="center_horizontal|center_vertical">
 
-
-
-
-            <Button
-                android:id="@+id/Fx"
-                android:layout_width="0dp"
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id = "@+id/constraint_layout_Fx"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:background="@drawable/buttons_forms"
-                android:fontFamily="sans-serif"
-                android:text="@string/Fx_txt"
-                android:autoSizeTextType="uniform"
-                android:gravity="center"
-                android:textColor="@color/white"
-                android:textSize="@dimen/Nums_txtsize_normal" />
+                android:orientation="horizontal"
+                android:gravity="center_horizontal|center_vertical"
+                android:weightSum="4">
 
-            <Button
-                android:id="@+id/OpenBracket"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="@drawable/buttons_forms"
-                android:fontFamily="sans-serif"
-                android:text="("
-                android:gravity="center"
-                android:textColor="@color/white"
-                android:textSize="@dimen/Nums_txtsize_normal" />
+                <ImageView
+                    android:id="@+id/Fx"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/buttons_forms"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:padding="@dimen/Fx_Padding_normal"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/fx"
+                    app:layout_constraintBottom_toBottomOf="@id/OpenBracket"
+                    app:layout_constraintEnd_toStartOf="@id/OpenBracket"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/CloseBracket"
+                    tools:ignore="MissingConstraints,TouchTargetSizeCheck,SpeakableTextPresentCheck" />
 
-            <Button
-                android:id="@+id/CloseBracket"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="@drawable/buttons_forms"
-                android:fontFamily="sans-serif"
-                android:text=")"
-                android:gravity="center"
-                android:textColor="@color/white"
-                android:textSize="@dimen/Nums_txtsize_normal" />
-            <Button
-                android:id="@+id/Divide"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="@drawable/buttons_forms"
-                android:fontFamily="sans-serif"
-                android:text="/"
-                android:gravity="center"
-                android:textColor="@color/white"
-                android:textSize="@dimen/Nums_txtsize_normal" />
+                <!--            <Button-->
+                <!--                android:id="@+id/Fx"-->
+                <!--                android:layout_width="0dp"-->
+                <!--                android:layout_height="wrap_content"-->
+                <!--                android:layout_weight="1"-->
+                <!--                android:background="@drawable/buttons_forms"-->
+                <!--                android:fontFamily="sans-serif"-->
+                <!--                android:text="@string/Fx_txt"-->
+                <!--                android:autoSizeTextType="uniform"-->
+                <!--                android:gravity="center"-->
+                <!--                android:textColor="@color/white"-->
+                <!--                android:textSize="@dimen/Nums_txtsize_normal" />-->
+
+                <Button
+                    android:id="@+id/OpenBracket"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:layout_constraintEnd_toStartOf ="@id/CloseBracket"
+                    android:background="@drawable/buttons_forms"
+                    android:fontFamily="sans-serif"
+                    android:text="("
+                    android:gravity="center"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/Nums_txtsize_normal"
+                    tools:ignore="MissingConstraints" />
+
+                <Button
+                    android:id="@+id/CloseBracket"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/buttons_forms"
+                    android:fontFamily="sans-serif"
+                    app:layout_constraintEnd_toStartOf ="@id/Divide"
+                    android:text=")"
+                    android:gravity="center"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/Nums_txtsize_normal"
+                    tools:ignore="MissingConstraints" />
+                <Button
+                    android:id="@+id/Divide"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/buttons_forms"
+                    android:fontFamily="sans-serif"
+                    android:text="/"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:gravity="center"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/Nums_txtsize_normal"
+                    tools:ignore="MissingConstraints" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
         </LinearLayout>
 
-
+        <include layout="@layout/functions_layout" />
         <!--7 8 9 *-->
         <LinearLayout
             android:id="@+id/_789_"
@@ -248,10 +287,6 @@
                 android:textSize="@dimen/Nums_txtsize_normal" />
         </LinearLayout>
 
-
-
-
-
         <!--1   2   3   +-->
         <LinearLayout
             android:id="@+id/_123_"
@@ -324,57 +359,57 @@
             android:gravity="center_horizontal|center_vertical"
             >
 
-        <Button
-            android:id="@+id/Num0"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:background="@drawable/buttons_forms"
-            android:fontFamily="sans-serif"
-            android:text="0"
-            android:gravity="center|center_horizontal"
-            android:textColor="@color/white"
-            android:textSize="@dimen/Nums_txtsize_normal" />
+            <Button
+                android:id="@+id/Num0"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/buttons_forms"
+                android:fontFamily="sans-serif"
+                android:text="0"
+                android:gravity="center|center_horizontal"
+                android:textColor="@color/white"
+                android:textSize="@dimen/Nums_txtsize_normal" />
 
-        <Button
-            android:id="@+id/Dot"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:background="@drawable/buttons_forms"
-            android:fontFamily="sans-serif"
-            android:text="."
-            android:gravity="center"
-            android:textColor="@color/white"
-            android:textSize="@dimen/Nums_txtsize_normal" />
+            <Button
+                android:id="@+id/Dot"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/buttons_forms"
+                android:fontFamily="sans-serif"
+                android:text="."
+                android:gravity="center"
+                android:textColor="@color/white"
+                android:textSize="@dimen/Nums_txtsize_normal" />
 
-        <Button
-            android:id="@+id/C"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:background="@drawable/buttons_forms"
-            android:fontFamily="sans-serif"
-            android:text="С"
-            android:gravity="center"
-            android:autoSizeTextType="uniform"
-            android:textColor="@color/white"
-            android:textSize="@dimen/Nums_txtsize_normal" />
+            <Button
+                android:id="@+id/C"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/buttons_forms"
+                android:fontFamily="sans-serif"
+                android:text="С"
+                android:gravity="center"
+                android:autoSizeTextType="uniform"
+                android:textColor="@color/white"
+                android:textSize="@dimen/Nums_txtsize_normal" />
 
-        <Button
-            android:id="@+id/Equal"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:background="@drawable/btn_equal"
-            android:fontFamily="sans-serif"
-            android:text="="
-            android:gravity="center"
-            android:textColor="@color/white"
-            android:textSize="@dimen/Nums_txtsize_normal" />
+            <Button
+                android:id="@+id/Equal"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/btn_equal"
+                android:fontFamily="sans-serif"
+                android:text="="
+                android:gravity="center"
+                android:textColor="@color/white"
+                android:textSize="@dimen/Nums_txtsize_normal" />
+        </LinearLayout>
+
     </LinearLayout>
-        <include layout = "@layout/functions_layout_normal"></include>
-</LinearLayout>
 
 </LinearLayout>
 

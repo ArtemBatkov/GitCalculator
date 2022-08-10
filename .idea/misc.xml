@@ -5,6 +5,7 @@
       <map>
         <entry key="..\:/MobDevProjects/Calculator/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.2595" />
         <entry key="..\:/MobDevProjects/Calculator/app/src/main/res/drawable/back_btn_form.xml" value="0.2035" />
+        <entry key="..\:/MobDevProjects/Calculator/app/src/main/res/drawable/back_view_circle.xml" value="0.194" />
         <entry key="..\:/MobDevProjects/Calculator/app/src/main/res/drawable/brackets_form.xml" value="0.1815" />
         <entry key="..\:/MobDevProjects/Calculator/app/src/main/res/drawable/btn_equal.xml" value="0.124" />
         <entry key="..\:/MobDevProjects/Calculator/app/src/main/res/drawable/buttons_forms.xml" value="0.2" />
@@ -13,15 +14,28 @@
         <entry key="..\:/MobDevProjects/Calculator/app/src/main/res/drawable/operators_form.xml" value="0.124" />
         <entry key="..\:/MobDevProjects/Calculator/app/src/main/res/drawable/plus_minus.xml" value="0.2595" />
         <entry key="..\:/MobDevProjects/Calculator/app/src/main/res/drawable/power_btn.xml" value="0.124" />
-        <entry key="..\:/MobDevProjects/Calculator/app/src/main/res/drawable/text_view_circle.xml" value="0.2595" />
-        <entry key="..\:/MobDevProjects/Calculator/app/src/main/res/layout-large/activity_main.xml" value="0.15775972637879435" />
+        <entry key="..\:/MobDevProjects/Calculator/app/src/main/res/drawable/text_view_circle.xml" value="0.176" />
+        <entry key="..\:/MobDevProjects/Calculator/app/src/main/res/layout-Xlarge/activity_main.xml" value="0.1" />
+        <entry key="..\:/MobDevProjects/Calculator/app/src/main/res/layout-Xlarge/functions_layout.xml" value="0.1" />
+        <entry key="..\:/MobDevProjects/Calculator/app/src/main/res/layout-large/activity_main.xml" value="0.17015818725951262" />
+        <entry key="..\:/MobDevProjects/Calculator/app/src/main/res/layout-large/functions_layout.xml" value="0.20863616930312098" />
+        <entry key="..\:/MobDevProjects/Calculator/app/src/main/res/layout-large/functions_layout_large.xml" value="0.14621633176571183" />
+        <entry key="..\:/MobDevProjects/Calculator/app/src/main/res/layout-large/functions_layout_largel.xml" value="0.1893971782813168" />
+        <entry key="..\:/MobDevProjects/Calculator/app/src/main/res/layout-large/functions_layout_normal.xml" value="0.13296280461735785" />
+        <entry key="..\:/MobDevProjects/Calculator/app/src/main/res/layout-normal-v26/functions_layout_large.xml" value="0.2671875" />
         <entry key="..\:/MobDevProjects/Calculator/app/src/main/res/layout-normal-v26/functions_layout_normal.xml" value="0.1" />
-        <entry key="..\:/MobDevProjects/Calculator/app/src/main/res/layout-normal/activity_main.xml" value="0.2" />
-        <entry key="..\:/MobDevProjects/Calculator/app/src/main/res/layout-normal/functions_layout.xml" value="0.1" />
+        <entry key="..\:/MobDevProjects/Calculator/app/src/main/res/layout-normal/activity_main.xml" value="0.15016501650165018" />
+        <entry key="..\:/MobDevProjects/Calculator/app/src/main/res/layout-normal/f.xml" value="0.20778110303548525" />
+        <entry key="..\:/MobDevProjects/Calculator/app/src/main/res/layout-normal/functions_layout.xml" value="0.2" />
+        <entry key="..\:/MobDevProjects/Calculator/app/src/main/res/layout-normal/functions_layout_large.xml" value="0.14621633176571183" />
         <entry key="..\:/MobDevProjects/Calculator/app/src/main/res/layout-normal/functions_layout_normal.xml" value="0.152" />
-        <entry key="..\:/MobDevProjects/Calculator/app/src/main/res/layout-small/activity_main.xml" value="0.176" />
-        <entry key="..\:/MobDevProjects/Calculator/app/src/main/res/layout/activity_main.xml" value="0.136" />
-        <entry key="..\:/MobDevProjects/Calculator/app/src/main/res/layout/functions_layout_normal.xml" value="0.42951541850220265" />
+        <entry key="..\:/MobDevProjects/Calculator/app/src/main/res/layout-normal/layout_function.xml" value="0.3796875" />
+        <entry key="..\:/MobDevProjects/Calculator/app/src/main/res/layout-small/activity_main.xml" value="0.4728682170542636" />
+        <entry key="..\:/MobDevProjects/Calculator/app/src/main/res/layout/activity_main.xml" value="0.3776150627615063" />
+        <entry key="..\:/MobDevProjects/Calculator/app/src/main/res/layout/functions_layout.xml" value="0.264" />
+        <entry key="..\:/MobDevProjects/Calculator/app/src/main/res/layout/functions_layout_large.xml" value="0.2687224669603524" />
+        <entry key="..\:/MobDevProjects/Calculator/app/src/main/res/layout/functions_layout_normal.xml" value="0.3138075313807531" />
+        <entry key="..\:/MobDevProjects/Calculator/app/src/main/res/layout/functions_layoutl.xml" value="0.1893971782813168" />
         <entry key="..\:/MobDevProjects/Calculator/app/src/main/res/layout/sample_my_view.xml" value="0.2" />
       </map>
     </option>

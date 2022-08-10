@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+                     <!--MARGINS-->
+    <!--Layout TextView and Back-->
+    <dimen name="lyt_MainScreen_MarginTop_small">10dp</dimen>
+    <dimen name="lyt_MainScreen_MarginStart_small">1dp</dimen>
+    <dimen name="lyt_MainScreen_MarginEnd_small">1dp</dimen>
+    <dimen name="lyt_MainScreen_MarginBottom_small">5dp</dimen>
+
+
+        <!--TextView adjust-->
+        <dimen name="TextView_param_EndPad_small">10dp</dimen>
+        <string name="TextView_param_DefaultText_small">0</string>
+        <dimen name="TextView_param_StartMarg_small">1dp</dimen>
+        <dimen name="TextView_param_TxtSize_small">50sp</dimen>
+
+
+        <!--Back (image button) adjust-->
+<!--        <dimen name="Back_Opacity">1</dimen>-->
+        <dimen name="Back_Padding_small">4dp</dimen>
+        <dimen name="Back_MarginEnd_small">1dp</dimen>
+        <dimen name="Back_PaddingStart_small">5dp</dimen>
+        <dimen name="Back_PaddingEnd_small">5dp</dimen>
+
+    <!--Layout Nums-->
+
+        <!--Fx Layout Linear-->
+            <!--Fx Layout Constraint-->
+                <!--Fx ImageView-->
+                <dimen name="Fx_Padding_small">5dp</dimen>
+                <!--Fx ImageView-->
+            <!--Fx Layout Constraint-->
+        <!--Fx Layout Constraint-->
+
+        <!--Buttons-->
+        <dimen name="Nums_txtsize_small">50sp</dimen>
+
+    <!--Layout functions-->
+    <dimen name="layout_function_MargBottom_small">10dp</dimen>
+
+    <!--Trigonometry-->
+    <dimen name ="txtsize_functions_small">50sp</dimen>
+
+</resources>

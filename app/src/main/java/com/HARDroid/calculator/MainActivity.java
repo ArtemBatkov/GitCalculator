@@ -1,46 +1,43 @@
-package com.example.calculator;
+package com.HARDroid.calculator;
 
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.calculator.R;
-import  com.google.android.material.color.MaterialColors;
+import com.HARDroid.R;
 
 import android.annotation.SuppressLint;
-import android.graphics.Typeface;
+import android.os.Build;
 import android.os.Bundle;
-import android.sax.EndElementListener;
-import android.support.v4.os.IResultReceiver;
 import android.text.method.ScrollingMovementMethod;
-import android.view.MotionEvent;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.EditText;
-import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import java.lang.invoke.LambdaConversionException;
-import java.lang.reflect.Type;
 import java.util.ArrayList;
-import java.util.Set;
 
 public class MainActivity extends AppCompatActivity {
 
     private TextView MainScreen;
     private Button Num0,Num1,Num2,Num3,Num4,Num5,Num6,Num7,Num8,Num9,Plus,Minus,Mult,Divide,
-            Percent, Square, Factor,PowerOf,OpenBracket,CloseBracket,Dot,Fx,C,Equal,
+            Percent, Square, Factor,PowerOf,OpenBracket,CloseBracket,Dot,C,Equal,
             sin,cos, tg, ctg,
             pi,exp,log,ln;
 
-    private ImageView Back;
+    private ImageView Back,Fx;
     private static LinearLayout layout_Fx,_789_,_456_,_123_,_0_,functions, _Trigonometry_;
     private String MainScreenText = "0";
     private ArrayList <String> OperatorBuffer = new ArrayList<String>(){
         {
-            add("+"); add("-"); add("*"); add("/"); add("±"); add("(");add(")");add("^");
+            add("+"); add("-"); add("*"); add("/"); add("(");add(")");add("^");
+        }
+    };
+
+    private ArrayList<String> OperatorBufferUnary = new ArrayList<String>(){
+        {
+            add("√");
         }
     };
 
@@ -53,9 +50,21 @@ public class MainActivity extends AppCompatActivity {
         return OperatorBuffer;
     }
 
-
+    public ArrayList getUnaryOperatorList(){
+        return OperatorBufferUnary;
+    }
 
     public void setMainScreenText(String symbol) {
+        SyntaxCheck check = new SyntaxCheck(this);
+
+        if(MainScreenText.equals("0")&&!check.IsBracket(symbol) && check.IsOperator(symbol)){
+            MainScreenText +=symbol;
+            MainScreen.setText(MainScreenText);
+            check  = null;
+            return;
+        }
+
+
         if((MainScreenText.length() == 1) && (MainScreenText.equals("0")))
         {
             MainScreenText ="";
@@ -66,7 +75,7 @@ public class MainActivity extends AppCompatActivity {
             MainScreenText += symbol;
             MainScreen.setText(MainScreenText);
         }
-
+        check  = null;
     }
 
     public String getMainScreenText()
@@ -118,6 +127,14 @@ public class MainActivity extends AppCompatActivity {
         params = null;
     }
 
+    public void AlignFxSize(){
+        LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT,LinearLayout.LayoutParams.WRAP_CONTENT);
+        params.width = Num0.getWidth();
+        params.height = Num0.getHeight();
+        params.weight = 1;
+        Fx.setLayoutParams(params);
+        params = null;
+    }
 
     public void ShowLayout(LinearLayout layout)
     {
@@ -170,8 +187,27 @@ public class MainActivity extends AppCompatActivity {
         params = null;
     }
 
+    public String getSymbolFromEnd(int indexFromEnd){
+        int len = MainScreenText.length();
+        String Symbol;
+        try{
+            Symbol = MainScreenText.substring(len+indexFromEnd);
+            return Symbol;
+        }
+        catch (Exception exp){
+            return "";
+        }
+    }
 
 
+
+    public void AlignFx(){
+        LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT,LinearLayout.LayoutParams.WRAP_CONTENT);
+        params.height = OpenBracket.getHeight();
+        params.width = OpenBracket.getWidth();
+        Fx.setLayoutParams(params);
+        params = null;
+    }
 
     @SuppressLint("ClickableViewAccessibility")
     @Override
@@ -225,12 +261,21 @@ public class MainActivity extends AppCompatActivity {
         log =  findViewById(R.id.Log);
         ln =  findViewById(R.id.Ln);
 
+        functions = findViewById(R.id.functions);
+        layout_Fx = findViewById(R.id.linear_layout_Fx);
+        _789_ = findViewById(R.id._789_);
+        _456_ = findViewById(R.id._456_);
+        _123_ = findViewById(R.id._123_);
+        _0_ = findViewById(R.id._0_);
+        _Trigonometry_ =findViewById(R.id._Trigonometry_);
 
+        layouts.add(_789_);layouts.add(_456_);layouts.add(_123_);//layouts.add(_0_);
 
         SyntaxCheck SyntaxHandle = new SyntaxCheck(MainActivity.this);
 
         Parse ParseHandle = new Parse(MainActivity.this);
 
+//         AlignFx();
 
 
         Num0.setOnClickListener(new View.OnClickListener() {
@@ -336,10 +381,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 String symbol = "-"; //minus
-                if (SyntaxHandle.IsLastSymbolOperator())
-                {
-                    if(!SyntaxHandle.IsSymbolTheSameAsPrevious(symbol)) SyntaxHandle.ChangeLastOperatorForNew(symbol);
-                }
+                if(SyntaxHandle.IsSymbolTheSameAsPrevious(symbol)) return;
                 else setMainScreenText(symbol);
             }
         });
@@ -369,56 +411,6 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
-
-//        PowerOf.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                String symbol = "^";
-//                int len = MainScreenText.length();
-//                if (SyntaxHandle.IsLastSymbolOperator())
-//                {
-//                    if(!SyntaxHandle.IsSymbolTheSameAsPrevious(symbol)) SyntaxHandle.ChangeLastOperatorForNew(symbol);
-//                }
-//                else setMainScreenText(symbol);
-//            }
-//        });
-
-//        PlusMinus.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                boolean isDigit = SyntaxHandle.IsNumeric(MainScreenText);
-//                Number value = 0;
-//                value = SyntaxHandle.MakeNegative();
-//                String PreviousSymbol;
-//                String PenultimateSymbol;
-//
-//                if (value.doubleValue() == Double.MAX_VALUE) { // sign changer
-//                    return;
-//                }
-//                else {
-//                    if (isDigit) { //One Digit
-//                        ClearAll();
-//                        setMainScreenText(String.valueOf(value));
-//                    } else { // Equation
-//                        PreviousSymbol = SyntaxHandle.getPreviousSymbol();
-//                        PenultimateSymbol = SyntaxHandle.getPenultimateSymbol();
-//
-//                        if (PreviousSymbol.equals("-") && (value.intValue() > 0)) {
-//                            ClearLastSymbol();
-//                            if (!(PenultimateSymbol.equals("*")||PenultimateSymbol.equals("/")||PenultimateSymbol.equals("^"))) setMainScreenText("+"); //delete "+" before *,/,^
-//                            setMainScreenText(String.valueOf(value));
-//                        }
-//                        else if (PreviousSymbol.equals("+") && (value.intValue() < 0)) {
-//                            ClearLastSymbol();
-//                            setMainScreenText(String.valueOf(value));
-//                        }
-//                        else {
-//                            setMainScreenText(String.valueOf(value));
-//                        }
-//                    }
-//                }
-//            }
-//        });
 
         OpenBracket.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -468,9 +460,26 @@ public class MainActivity extends AppCompatActivity {
 
 
         Back.setOnClickListener(new View.OnClickListener() {
+            @RequiresApi(api = Build.VERSION_CODES.N)
             @Override
             public void onClick(View view) {
-                ClearLastSymbol();
+                String LastSymbol = getSymbolFromEnd(-1);
+                String SecondToLastSymbol = getSymbolFromEnd(-2);
+
+                if(LastSymbol.equals("(")&&SecondToLastSymbol.isEmpty()){ClearLastSymbol();return;}
+
+                if (LastSymbol.equals("(") && Character.isLetter(SecondToLastSymbol.charAt(0))) {
+                    //if a open bracket and after that there is a letter
+                    //so
+                    //delete full operation
+                    ClearLastSymbol(); // deleting a bracket first
+                    LastSymbol = getSymbolFromEnd(-1);
+                    while (Character.isLetter(LastSymbol.charAt(0))) {
+                        ClearLastSymbol();
+                        LastSymbol = getSymbolFromEnd(-1);
+                    }
+                } else
+                    ClearLastSymbol();
             }
         });
 
@@ -489,6 +498,7 @@ public class MainActivity extends AppCompatActivity {
 
 
         Equal.setOnClickListener(new View.OnClickListener() {
+            @RequiresApi(api = Build.VERSION_CODES.N)
             @Override
             public void onClick(View view) {
                 ArrayList<String>MainActivityTokens = ParseHandle.StartParse();
@@ -496,7 +506,6 @@ public class MainActivity extends AppCompatActivity {
 
                 ComputingEngine Engine = new ComputingEngine(MainActivityTokens,MainActivity.this);
                 Engine.StartComputing();
-
 
                 Number result = Engine.getMainResult();
                 double result_doub = 0;
@@ -507,11 +516,119 @@ public class MainActivity extends AppCompatActivity {
                     setMainScreenText(String.valueOf(result_int));
                 }else{ // double
                     result_doub=result.doubleValue();
-                    setMainScreenText(String.valueOf(result_doub));
+                    setMainScreenText(String.valueOf(String.format("%.2f",result_doub).replace(",",".")));
                 }
                 Engine = null;
             }
         });
+
+        PowerOf.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String symbol = "^";
+                int len = MainScreenText.length();
+                if (SyntaxHandle.IsLastSymbolOperator())
+                {
+                    if(!SyntaxHandle.IsSymbolTheSameAsPrevious(symbol)) SyntaxHandle.ChangeLastOperatorForNew(symbol);
+                }
+                else setMainScreenText(symbol);
+            }
+        });
+
+        Percent.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                String symbol = "%";
+                if(SyntaxHandle.IsSymbolTheSameAsPrevious(symbol)) return;
+                setMainScreenText(symbol);
+            }
+        });
+
+        Square.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String symbol = "√";
+                if(SyntaxHandle.IsSymbolTheSameAsPrevious(symbol)) return;
+                setMainScreenText(symbol);
+            }
+        });
+
+        Factor.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String symbol = "!";
+                if(SyntaxHandle.IsSymbolTheSameAsPrevious(symbol)) return;
+                setMainScreenText(symbol);
+            }
+        });
+
+        sin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String symbol = "Sin(";
+                setMainScreenText(symbol);
+            }
+        });
+
+        cos.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String symbol = "Cos(";
+                setMainScreenText(symbol);
+            }
+        });
+
+        tg.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String symbol = "tg(";
+                setMainScreenText(symbol);
+            }
+        });
+
+
+        ctg.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String symbol = "ctg(";
+                setMainScreenText(symbol);
+            }
+        });
+
+
+        pi.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String symbol = "π";
+                setMainScreenText(symbol);
+            }
+        });
+
+        exp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String symbol = "e";
+                setMainScreenText(symbol);
+            }
+        });
+
+        log.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String symbol = "log(";
+                setMainScreenText(symbol);
+            }
+        });
+
+        ln.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String symbol = "ln(";
+                setMainScreenText(symbol);
+            }
+        });
+
 
 
     }

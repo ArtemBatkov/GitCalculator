@@ -7,11 +7,13 @@
     android:layout_height="0dp"
     android:layout_weight="4"
     android:gravity="center_horizontal|center_vertical"
-    android:background="#31AAEC"
     android:visibility="gone"
     android:layout_alignParentBottom="true"
-    android:layout_marginBottom="10dp"
-    tools:ignore="MissingDefaultResource">
+    android:layout_marginBottom="@dimen/layout_function_MargBottom_large"
+    android:layout_centerInParent="true"
+    android:layout_centerVertical="true"
+    tools:ignore="MissingDefaultResource"
+    android:weightSum="3">
 
     <LinearLayout
         android:id="@+id/_PowerOf_"
@@ -21,9 +23,6 @@
         android:layout_weight="1"
         android:weightSum="4"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="10dp"
-        android:layout_marginEnd="10dp"
-        android:layout_marginBottom="0dp"
         android:gravity="center_horizontal|center_vertical"
         >
 
@@ -37,7 +36,7 @@
             android:text="^"
             android:gravity="center"
             android:textColor="@color/white"
-            android:textSize="@dimen/Nums_txtsize_normal" />
+            android:textSize="@dimen/Nums_txtsize_large" />
 
         <Button
             android:id="@+id/Percent"
@@ -49,7 +48,7 @@
             android:text="%"
             android:gravity="center"
             android:textColor="@color/white"
-            android:textSize="@dimen/Nums_txtsize_normal" />
+            android:textSize="@dimen/Nums_txtsize_large" />
 
         <Button
             android:id="@+id/Square"
@@ -61,7 +60,7 @@
             android:text="√"
             android:gravity="center"
             android:textColor="@color/white"
-            android:textSize="@dimen/Nums_txtsize_normal" />
+            android:textSize="@dimen/Nums_txtsize_large" />
         <Button
             android:id="@+id/Factor"
             android:layout_width="0dp"
@@ -72,7 +71,7 @@
             android:text="!"
             android:gravity="center"
             android:textColor="@color/white"
-            android:textSize="@dimen/Nums_txtsize_normal" />
+            android:textSize="@dimen/Nums_txtsize_large" />
     </LinearLayout>
 
     <LinearLayout
@@ -83,9 +82,6 @@
         android:layout_weight="1"
         android:weightSum="4"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="10dp"
-        android:layout_marginEnd="10dp"
-        android:layout_marginBottom="0dp"
         android:gravity="center_horizontal|center_vertical"
 
         >
@@ -97,11 +93,13 @@
             android:layout_weight="1"
             android:background="@drawable/buttons_forms"
             android:fontFamily="sans-serif"
+            android:textAllCaps="false"
             android:text="@string/Sin_txt"
             android:gravity="center"
             android:textColor="@color/white"
             android:autoSizeTextType="uniform"
-            android:textSize="50dp" />
+            android:textSize="@dimen/txtsize_functions_large"
+            tools:targetApi="o" />
 
         <Button
             android:id="@+id/Cos"
@@ -110,35 +108,115 @@
             android:layout_weight="1"
             android:background="@drawable/buttons_forms"
             android:fontFamily="sans-serif"
-            android:text="cos"
+            android:textAllCaps="false"
+            android:text="@string/Cos_txt"
             android:gravity="center"
             android:textColor="@color/white"
-            android:textSize="65dp" />
+            android:autoSizeTextType="uniform"
+            android:textSize="@dimen/txtsize_functions_large"
+            tools:targetApi="o" />
 
         <Button
-            android:id="@+id/Tan"
+            android:id="@+id/Tg"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:background="@drawable/buttons_forms"
             android:fontFamily="sans-serif"
-            android:text="tg"
+            android:textAllCaps="false"
+            android:text="@string/Tg_txt"
             android:gravity="center"
             android:textColor="@color/white"
-            android:textSize="65dp" />
+            android:autoSizeTextType="uniform"
+            android:textSize="@dimen/txtsize_functions_large"
+            tools:targetApi="o"/>
+
         <Button
-            android:id="@+id/CTan"
+            android:id="@+id/CTg"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:background="@drawable/buttons_forms"
             android:fontFamily="sans-serif"
-            android:text="ctg"
+            android:textAllCaps="false"
+            android:text="@string/Ctg_txt"
             android:gravity="center"
             android:textColor="@color/white"
-            android:textSize="65dp" />
+            android:autoSizeTextType="uniform"
+            android:textSize="@dimen/txtsize_functions_large"
+            tools:targetApi="o" />
     </LinearLayout>
 
+    <LinearLayout
+        android:id="@+id/_Constants_"
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:weightSum="4"
+        android:layout_alignParentBottom="true"
+        android:gravity="center_horizontal|center_vertical"
 
+        >
 
+        <Button
+            android:id="@+id/Pi"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:autoSizeTextType="uniform"
+            android:background="@drawable/buttons_forms"
+            android:fontFamily="sans-serif"
+            android:textAllCaps="false"
+            android:gravity="center"
+            android:text="π"
+            android:textColor="@color/white"
+            android:textSize="@dimen/Nums_txtsize_large"
+            tools:targetApi="o" />
+
+        <Button
+            android:id="@+id/Exp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/buttons_forms"
+            android:fontFamily="sans-serif"
+            android:textAllCaps="false"
+            android:text="e"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:autoSizeTextType="uniform"
+            android:textSize="@dimen/Nums_txtsize_large"
+            tools:targetApi="o" />
+
+        <Button
+            android:id="@+id/Log"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/buttons_forms"
+            android:fontFamily="sans-serif"
+            android:textAllCaps="false"
+            android:text="log"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:autoSizeTextType="uniform"
+            android:textSize="@dimen/txtsize_functions_large"
+            tools:targetApi="o"/>
+
+        <Button
+            android:id="@+id/Ln"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/buttons_forms"
+            android:fontFamily="sans-serif"
+            android:textAllCaps="false"
+            android:text="ln"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:autoSizeTextType="uniform"
+            android:textSize="@dimen/txtsize_functions_large"
+            tools:targetApi="o" />
+    </LinearLayout>
 </LinearLayout>

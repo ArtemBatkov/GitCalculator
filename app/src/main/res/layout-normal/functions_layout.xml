@@ -9,7 +9,7 @@
     android:gravity="center_horizontal|center_vertical"
     android:visibility="gone"
     android:layout_alignParentBottom="true"
-    android:layout_marginBottom="10dp"
+    android:layout_marginBottom="@dimen/layout_function_MargBottom_normal"
     android:layout_centerInParent="true"
     android:layout_centerVertical="true"
     tools:ignore="MissingDefaultResource"

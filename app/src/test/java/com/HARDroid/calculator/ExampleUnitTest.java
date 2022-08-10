@@ -1,4 +1,4 @@
-package com.example.calculator;
+package com.HARDroid.calculator;
 
 import org.junit.Test;
 

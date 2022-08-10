@@ -1,78 +1,53 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <resources>
-    <!--TextView adjust-->
-    <string name="TextView_param_DefaultText_normal">0</string>
-    <dimen name="TextView_param_LftMar_normal">1dp</dimen>
-    <dimen name="TextView_param_RhtMar_normal">50dp</dimen>
-    <dimen name="TextView_param_RhtPad_normal">10dp</dimen>
-    <dimen name="TextView_param_TxtSize_normal">35sp</dimen>
-    <dimen name="TextView_param_TopMar_normal">5dp</dimen>
-    <dimen name="TextView_padding_normal">5dp</dimen>
+    <color name="MainBackGround">#201D1D</color>
+    <color name="Back_BackGround">#7A7777</color>
+                     <!--MARGINS-->
+    <!--Layout TextView and Back-->
+    <dimen name="lyt_MainScreen_MarginTop_normal">10dp</dimen>
+    <dimen name="lyt_MainScreen_MarginStart_normal">1dp</dimen>
+    <dimen name="lyt_MainScreen_MarginEnd_normal">1dp</dimen>
+    <dimen name="lyt_MainScreen_MarginBottom_normal">5dp</dimen>
 
-    <!--Back (image button) adjust-->
-    <dimen name="Back_width_normal">45dp</dimen>
-    <dimen name="Back_height_normal">55dp</dimen>
 
-    <!--Nums (buttons) adjust-->
-    <dimen name="Nums_txtsize_normal">70sp</dimen>
-    <dimen name="Fx_txtsize_normal">50sp</dimen>
-    <string name="Fx_txt">F<sub><small>x</small></sub></string>
+        <!--TextView adjust-->
+        <dimen name="TextView_param_EndPad_normal">10dp</dimen>
+        <string name="TextView_param_DefaultText_normal">0</string>
+        <dimen name="TextView_param_StartMarg_normal">1dp</dimen>
+        <dimen name="TextView_param_TxtSize_normal">35sp</dimen>
 
-    <string name="AC_txt">AC</string>
 
+        <!--Back (image button) adjust-->
+        <dimen name="Back_Opacity">1</dimen>
+        <dimen name="Back_Padding_normal">4dp</dimen>
+        <dimen name="Back_MarginEnd_normal">1dp</dimen>
+        <dimen name="Back_PaddingStart_normal">10dp</dimen>
+
+    <!--Layout Nums-->
+
+        <!--Fx Layout Linear-->
+            <!--Fx Layout Constraint-->
+                <!--Fx ImageView-->
+                <dimen name="Fx_Padding_normal">1dp</dimen>
+                <!--Fx ImageView-->
+            <!--Fx Layout Constraint-->
+        <!--Fx Layout Constraint-->
+
+
+
+
+        <!--Buttons-->
+        <dimen name="Nums_txtsize_normal">70sp</dimen>
+
+    <!--Layout functions-->
+    <dimen name="layout_function_MargBottom_normal">10dp</dimen>
+
+    <!--Trigonometry-->
+    <dimen name ="txtsize_functions_normal">50sp</dimen>
     <string name="Sin_txt"><small>sin</small></string>
     <string name="Cos_txt"><small>cos</small></string>
     <string name="Tg_txt"><small>tg</small></string>
     <string name="Ctg_txt"><small>ctg</small></string>
 
-    <dimen name ="txtsize_functions_normal">50sp</dimen>
-
-    <dimen name="Num0_mrgnstrt_normal">10dp</dimen>
-    <dimen name="Num0_mrgnbottom_normal">10dp</dimen>
-    <dimen name="Num0_mrgntop_normal">10dp</dimen>
-
-    <dimen name="Num1_mrgntop_normal">10dp</dimen>
-    <dimen name="Num1_mrgnlft_normal">20dp</dimen>
-
-
-    <!--Operators (buttons) adjust-->
-    <dimen name="SpaceBetweenOperators_normal">0.5dp</dimen>
-    <dimen name="PaddingUp_normal">15dp</dimen>
-
-    <dimen name="Plus_TxtSize_normal">30sp</dimen>
-    <dimen name="Plus_mrgnstrt_normal">5dp</dimen>
-    <dimen name="Plus_mrgnbottom_normal">15dp</dimen>
-    <dimen name="Plus_mrgntop_normal">1dp</dimen>
-
-    <dimen name="Minus_TxtSize_normal">@dimen/Plus_TxtSize_normal</dimen>
-
-    <dimen name="Mult_TxtSize_normal">@dimen/Plus_TxtSize_normal</dimen>
-
-    <dimen name="Divide_TxtSize_normal">@dimen/Plus_TxtSize_normal</dimen>
-
-
-
-    <!--Brackets (buttons) adjust-->
-    <dimen name="Brackets_TxtSize_normal">50sp</dimen>
-    <dimen name="Brackets_mrgnlft_normal">5dp</dimen>
-    <dimen name="Brackets_mrgntop_normal">5dp</dimen>
-    <dimen name="Brackets_mrgnrght_normal">10dp</dimen>
-    <dimen name="Brackets_mrgnbottom_normal">5dp</dimen>
-
-
-
-    <!--Power of xY (buttons) adjust-->
-    <dimen name="Power_TxtSize_normal">18sp</dimen>
-    <dimen name="Power_mrgntop_normal">10dp</dimen>
-    <dimen name="Power_mrgnrht_normal">5dp</dimen>
-    <dimen name="Power_mrgnbottom_normal">10dp</dimen>
-
-    <!--PlusMinus (buttons) adjust-->
-    <dimen name="PlusMinus_TxtSize_normal">40dp</dimen>
-    <dimen name="PlusMinus_mrgntop_normal">10dp</dimen>
-    <dimen name="PlusMinus_mrgnbottom_normal">10dp</dimen>
-
-    <!-- (buttons) adjust-->
-    <dimen name="RightBoundary_normal">5dp</dimen>
 </resources>

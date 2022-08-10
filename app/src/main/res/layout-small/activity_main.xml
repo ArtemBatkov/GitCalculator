@@ -17,10 +17,10 @@
         android:layout_height="0dp"
         android:layout_weight="15"
         android:weightSum="100"
-        android:layout_marginBottom="@dimen/lyt_MainScreen_MarginBottom_large"
-        android:layout_marginTop="@dimen/lyt_MainScreen_MarginTop_large"
-        android:layout_marginStart="@dimen/lyt_MainScreen_MarginStart_large"
-        android:layout_marginEnd="@dimen/lyt_MainScreen_MarginEnd_large">
+        android:layout_marginBottom="@dimen/lyt_MainScreen_MarginBottom_small"
+        android:layout_marginTop="@dimen/lyt_MainScreen_MarginTop_small"
+        android:layout_marginStart="@dimen/lyt_MainScreen_MarginStart_small"
+        android:layout_marginEnd="@dimen/lyt_MainScreen_MarginEnd_small">
 
 
         <TextView
@@ -32,15 +32,15 @@
             android:bufferType="editable"
             android:ellipsize="start"
             android:layout_gravity="center"
-            android:paddingEnd="@dimen/TextView_param_EndPad_large"
+            android:paddingEnd="@dimen/TextView_param_EndPad_small"
             android:fontFamily="sans-serif"
             android:scrollHorizontally="true"
-            android:layout_marginStart="@dimen/TextView_param_StartMarg_large"
+            android:layout_marginStart="@dimen/TextView_param_StartMarg_small"
             android:singleLine="true"
-            android:text="@string/TextView_param_DefaultText_large"
+            android:text="@string/TextView_param_DefaultText_small"
             android:textAlignment="viewEnd"
             android:textIsSelectable="true"
-            android:textSize="@dimen/TextView_param_TxtSize_large"
+            android:textSize="@dimen/TextView_param_TxtSize_small"
             android:gravity="center"
             tools:ignore="RtlCompat" />
 
@@ -50,13 +50,13 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_gravity="center"
-            android:layout_marginEnd="@dimen/Back_MarginEnd_large"
+            android:layout_marginEnd="@dimen/Back_MarginEnd_small"
             android:layout_weight="10"
             android:alpha="@dimen/Back_Opacity"
             android:background="@drawable/back_view_circle"
             android:clickable="true"
             android:focusable="true"
-            android:padding="@dimen/Back_Padding_large"
+            android:padding="@dimen/Back_Padding_small"
             android:scaleType="fitCenter"
             android:src="@drawable/back"
             tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
@@ -100,7 +100,7 @@
                     android:background="@drawable/buttons_forms"
                     android:clickable="true"
                     android:focusable="true"
-                    android:padding="@dimen/Fx_Padding_large"
+                    android:padding="@dimen/Fx_Padding_small"
                     android:scaleType="centerCrop"
                     android:src="@drawable/fx"
                     app:layout_constraintBottom_toBottomOf="@id/OpenBracket"
@@ -120,7 +120,7 @@
                 <!--                android:autoSizeTextType="uniform"-->
                 <!--                android:gravity="center"-->
                 <!--                android:textColor="@color/white"-->
-                <!--                android:textSize="@dimen/Nums_txtsize_large" />-->
+                <!--                android:textSize="@dimen/Nums_txtsize_small" />-->
 
                 <Button
                     android:id="@+id/OpenBracket"
@@ -133,7 +133,7 @@
                     android:text="("
                     android:gravity="center"
                     android:textColor="@color/white"
-                    android:textSize="@dimen/Nums_txtsize_large"
+                    android:textSize="@dimen/Nums_txtsize_small"
                     tools:ignore="MissingConstraints" />
 
                 <Button
@@ -147,7 +147,7 @@
                     android:text=")"
                     android:gravity="center"
                     android:textColor="@color/white"
-                    android:textSize="@dimen/Nums_txtsize_large"
+                    android:textSize="@dimen/Nums_txtsize_small"
                     tools:ignore="MissingConstraints" />
                 <Button
                     android:id="@+id/Divide"
@@ -160,7 +160,7 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     android:gravity="center"
                     android:textColor="@color/white"
-                    android:textSize="@dimen/Nums_txtsize_large"
+                    android:textSize="@dimen/Nums_txtsize_small"
                     tools:ignore="MissingConstraints" />
             </androidx.constraintlayout.widget.ConstraintLayout>
         </LinearLayout>
@@ -188,7 +188,7 @@
                 android:text="7"
                 android:gravity="center"
                 android:textColor="@color/white"
-                android:textSize="@dimen/Nums_txtsize_large" />
+                android:textSize="@dimen/Nums_txtsize_small" />
 
             <Button
                 android:id="@+id/Num8"
@@ -200,7 +200,7 @@
                 android:text="8"
                 android:gravity="center"
                 android:textColor="@color/white"
-                android:textSize="@dimen/Nums_txtsize_large" />
+                android:textSize="@dimen/Nums_txtsize_small" />
 
             <Button
                 android:id="@+id/Num9"
@@ -212,7 +212,7 @@
                 android:text="9"
                 android:gravity="center"
                 android:textColor="@color/white"
-                android:textSize="@dimen/Nums_txtsize_large" />
+                android:textSize="@dimen/Nums_txtsize_small" />
             <Button
                 android:id="@+id/Multiply"
                 android:layout_width="0dp"
@@ -223,7 +223,7 @@
                 android:text="x"
                 android:gravity="center"
                 android:textColor="@color/white"
-                android:textSize="@dimen/Nums_txtsize_large" />
+                android:textSize="@dimen/Nums_txtsize_small" />
         </LinearLayout>
 
 
@@ -249,7 +249,7 @@
                 android:text="4"
                 android:gravity="center"
                 android:textColor="@color/white"
-                android:textSize="@dimen/Nums_txtsize_large" />
+                android:textSize="@dimen/Nums_txtsize_small" />
 
             <Button
                 android:id="@+id/Num5"
@@ -261,7 +261,7 @@
                 android:text="5"
                 android:gravity="center"
                 android:textColor="@color/white"
-                android:textSize="@dimen/Nums_txtsize_large" />
+                android:textSize="@dimen/Nums_txtsize_small" />
 
             <Button
                 android:id="@+id/Num6"
@@ -273,7 +273,7 @@
                 android:text="6"
                 android:gravity="center"
                 android:textColor="@color/white"
-                android:textSize="@dimen/Nums_txtsize_large" />
+                android:textSize="@dimen/Nums_txtsize_small" />
             <Button
                 android:id="@+id/Minus"
                 android:layout_width="0dp"
@@ -284,7 +284,7 @@
                 android:text="—"
                 android:gravity="center"
                 android:textColor="@color/white"
-                android:textSize="@dimen/Nums_txtsize_large" />
+                android:textSize="@dimen/Nums_txtsize_small" />
         </LinearLayout>
 
         <!--1   2   3   +-->
@@ -309,7 +309,7 @@
                 android:text="1"
                 android:gravity="center"
                 android:textColor="@color/white"
-                android:textSize="@dimen/Nums_txtsize_large" />
+                android:textSize="@dimen/Nums_txtsize_small" />
 
             <Button
                 android:id="@+id/Num2"
@@ -321,7 +321,7 @@
                 android:text="2"
                 android:gravity="center"
                 android:textColor="@color/white"
-                android:textSize="@dimen/Nums_txtsize_large" />
+                android:textSize="@dimen/Nums_txtsize_small" />
 
             <Button
                 android:id="@+id/Num3"
@@ -333,7 +333,7 @@
                 android:text="3"
                 android:gravity="center"
                 android:textColor="@color/white"
-                android:textSize="@dimen/Nums_txtsize_large" />
+                android:textSize="@dimen/Nums_txtsize_small" />
             <Button
                 android:id="@+id/Plus"
                 android:layout_width="0dp"
@@ -344,7 +344,7 @@
                 android:text="+"
                 android:gravity="center"
                 android:textColor="@color/white"
-                android:textSize="@dimen/Nums_txtsize_large" />
+                android:textSize="@dimen/Nums_txtsize_small" />
         </LinearLayout>
 
         <!--        0   .   AC    =-->
@@ -369,7 +369,7 @@
                 android:text="0"
                 android:gravity="center|center_horizontal"
                 android:textColor="@color/white"
-                android:textSize="@dimen/Nums_txtsize_large" />
+                android:textSize="@dimen/Nums_txtsize_small" />
 
             <Button
                 android:id="@+id/Dot"
@@ -381,7 +381,7 @@
                 android:text="."
                 android:gravity="center"
                 android:textColor="@color/white"
-                android:textSize="@dimen/Nums_txtsize_large" />
+                android:textSize="@dimen/Nums_txtsize_small" />
 
             <Button
                 android:id="@+id/C"
@@ -394,7 +394,7 @@
                 android:gravity="center"
                 android:autoSizeTextType="uniform"
                 android:textColor="@color/white"
-                android:textSize="@dimen/Nums_txtsize_large" />
+                android:textSize="@dimen/Nums_txtsize_small" />
 
             <Button
                 android:id="@+id/Equal"
@@ -406,7 +406,7 @@
                 android:text="="
                 android:gravity="center"
                 android:textColor="@color/white"
-                android:textSize="@dimen/Nums_txtsize_large" />
+                android:textSize="@dimen/Nums_txtsize_small" />
         </LinearLayout>
 
     </LinearLayout>

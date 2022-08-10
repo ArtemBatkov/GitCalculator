@@ -4,9 +4,8 @@
 
     <stroke
         android:width="0.1dp"
-        android:color="@color/black"
-        />
+        android:color="@color/black"/>
 
-    <corners android:bottomLeftRadius="5dp"
-             android:topLeftRadius="5dp" />
+    <corners android:bottomRightRadius="5dp"
+        android:topRightRadius="5dp" />
 </shape>
