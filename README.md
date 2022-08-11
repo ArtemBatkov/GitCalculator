@@ -18,6 +18,7 @@ General Recommendation is ALWAYS CLOSE ALL BRACKETS to have a right answer.
 
                                                         SCREENSHOTS
    1) SAMSUNG GRAND PRIME SCREENS. ANDROID 5.1, API 21.
+    
     ![Samsung GrandPrime Screen_1](https://user-images.githubusercontent.com/110242091/184124996-bcc0b357-2ce0-4cc0-8e14-2a1da30cbec9.png)
     ![Samsung GrandPrime Screen_2](https://user-images.githubusercontent.com/110242091/184125003-c14c2f17-fe1a-4f15-891a-cfb08e1c4bfa.png)
     ![Samsung GrandPrime Screen_3](https://user-images.githubusercontent.com/110242091/184125004-c3ec3ff3-5c31-4cdc-9ed7-b8d466adb5d0.png)
@@ -26,6 +27,7 @@ General Recommendation is ALWAYS CLOSE ALL BRACKETS to have a right answer.
     ![Samsung GrandPrime Screen_6](https://user-images.githubusercontent.com/110242091/184125009-88a2868b-8e6c-424c-b609-a0c7875cd4da.png)
     
     2) TABLET 8 DIMES, API 30.
+    
     ![Tablet 8dimes](https://user-images.githubusercontent.com/110242091/184125153-713c7ac3-c615-4a43-a366-ae518bd36206.png)
 
                                                       PLAY MARKET LINK
