@@ -33,8 +33,7 @@
             <!--Fx Layout Constraint-->
         <!--Fx Layout Constraint-->
 
-        <!--Buttons-->
-        <dimen name="Nums_txtsize_large">100sp</dimen>
+
 
     <!--Layout functions-->
     <dimen name="layout_function_MargBottom_large">10dp</dimen>

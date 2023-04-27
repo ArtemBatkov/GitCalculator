@@ -4,4 +4,9 @@
         <item name="android:background">@color/gray_400</item>
         <item name="exampleColor">@color/light_blue_400</item>
     </style>
+
+    <style name="Fx" parent="">
+        <item name="android:background">@drawable/buttons_forms</item>
+        <item name="android:solidColor">@color/material_dynamic_primary60</item>
+    </style>
 </resources>

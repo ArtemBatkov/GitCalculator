@@ -3,7 +3,7 @@
 
 
 
-    <solid android:color="@color/btn_equal_color" />
+    <solid android:color="@color/btn_fx_color" />
 
     <stroke
         android:width="2dp"

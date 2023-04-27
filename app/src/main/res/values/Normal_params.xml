@@ -38,7 +38,9 @@
 
 
         <!--Buttons-->
-        <dimen name="Nums_txtsize_normal">70sp</dimen>
+        <dimen name="Nums_txtsize_normal">65sp</dimen>
+
+        <dimen name="Nums_txtsize_large">70sp</dimen>
 
     <!--Layout functions-->
     <dimen name="layout_function_MargBottom_normal">10dp</dimen>

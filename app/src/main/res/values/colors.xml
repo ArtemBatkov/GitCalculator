@@ -37,4 +37,17 @@
     <color name="light_blue_600">#FF039BE5</color>
     <color name="gray_400">#FFBDBDBD</color>
     <color name="gray_600">#FF757575</color>
+
+
+    <color name="btn_nums_colors">#72000000</color>
+    <color name="btn_fx_color">#1C1B1B</color>
+    <color name="btn_operators_color">#E64A19</color>
+    <color name="btn_equal_color">#303F9F</color>
+    <color name="btn_clear_color">#D32F2F</color>
+
+
+    <color name="debug">#032305</color>
+
+
+    <color name="btn_advoper_color">#2962FF</color>
 </resources>

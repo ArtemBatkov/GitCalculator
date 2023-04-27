@@ -36,7 +36,7 @@
             android:text="^"
             android:gravity="center"
             android:textColor="@color/white"
-            android:textSize="@dimen/Nums_txtsize_normal" />
+            android:textSize="@dimen/universal_fsize" />
 
         <Button
             android:id="@+id/Percent"
@@ -48,7 +48,7 @@
             android:text="%"
             android:gravity="center"
             android:textColor="@color/white"
-            android:textSize="@dimen/Nums_txtsize_normal" />
+            android:textSize="@dimen/universal_fsize" />
 
         <Button
             android:id="@+id/Square"
@@ -60,7 +60,7 @@
             android:text="√"
             android:gravity="center"
             android:textColor="@color/white"
-            android:textSize="@dimen/Nums_txtsize_normal" />
+            android:textSize="@dimen/universal_fsize" />
         <Button
             android:id="@+id/Factor"
             android:layout_width="0dp"
@@ -71,7 +71,7 @@
             android:text="!"
             android:gravity="center"
             android:textColor="@color/white"
-            android:textSize="@dimen/Nums_txtsize_normal" />
+            android:textSize="@dimen/universal_fsize" />
     </LinearLayout>
 
     <LinearLayout
@@ -171,7 +171,7 @@
             android:gravity="center"
             android:text="π"
             android:textColor="@color/white"
-            android:textSize="@dimen/Nums_txtsize_normal"
+            android:textSize="@dimen/universal_fsize"
             tools:targetApi="o" />
 
         <Button
@@ -186,7 +186,7 @@
             android:gravity="center"
             android:textColor="@color/white"
             android:autoSizeTextType="uniform"
-            android:textSize="@dimen/Nums_txtsize_normal"
+            android:textSize="@dimen/universal_fsize"
             tools:targetApi="o" />
 
         <Button

@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Calculator</string>
+    <string name="fx">Fₓ</string>
+
 </resources>

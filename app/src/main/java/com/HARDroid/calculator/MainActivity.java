@@ -6,9 +6,13 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.HARDroid.R;
 
 import android.annotation.SuppressLint;
+import android.content.res.Configuration;
+import android.content.res.Resources;
 import android.os.Build;
 import android.os.Bundle;
 import android.text.method.ScrollingMovementMethod;
+import android.util.DisplayMetrics;
+import android.util.TypedValue;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -21,12 +25,12 @@ import java.util.ArrayList;
 public class MainActivity extends AppCompatActivity {
 
     private TextView MainScreen;
-    private Button Num0,Num1,Num2,Num3,Num4,Num5,Num6,Num7,Num8,Num9,Plus,Minus,Mult,Divide,
+    private Button Fx,Num0,Num1,Num2,Num3,Num4,Num5,Num6,Num7,Num8,Num9,Plus,Minus,Mult,Divide,
             Percent, Square, Factor,PowerOf,OpenBracket,CloseBracket,Dot,C,Equal,
             sin,cos, tg, ctg,
             pi,exp,log,ln;
 
-    private ImageView Back,Fx;
+    private ImageView Back;
     private static LinearLayout layout_Fx,_789_,_456_,_123_,_0_,functions, _Trigonometry_;
     private String MainScreenText = "0";
     private ArrayList <String> OperatorBuffer = new ArrayList<String>(){
@@ -146,23 +150,81 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void ShowFunctions(){
-        if(functions.getVisibility() == View.VISIBLE){ //hide functions, but show nums
-            SetDefaultWeight();
-            for(int i = 0; i < layouts.size(); i++)
-                ShowLayout(layouts.get(i));
-            HideLayout(functions);
+//        if(functions.getVisibility() == View.VISIBLE){ //hide functions, but show nums
+//            SetDefaultWeight();
+//            for(int i = 0; i < layouts.size(); i++)
+//                ShowLayout(layouts.get(i));
+//            HideLayout(functions);
+//
+//
+//        }
+//        else{//show functions, but hide nums
+//            for(int i = 0; i < layouts.size(); i++)
+//                HideLayout(layouts.get(i));
+//            SetWeight(layout_Fx,1);
+//            SetWeight(functions,4);
+//            ShowLayout(functions);
+//            AlignTrigonomIconSize();
+//        }
+        IsFun = !IsFun;
+        if(IsFun){
+            Num7.setVisibility(View.GONE);
+            Num8.setVisibility(View.GONE);
+            Num9.setVisibility(View.GONE);
+            Mult.setVisibility(View.GONE);
+            Num4.setVisibility(View.GONE);
+            Num5.setVisibility(View.GONE);
+            Num6.setVisibility(View.GONE);
+            Minus.setVisibility(View.GONE);
+            Num1.setVisibility(View.GONE);
+            Num2.setVisibility(View.GONE);
+            Num3.setVisibility(View.GONE);
+            Plus.setVisibility(View.GONE);
 
+            PowerOf.setVisibility(View.VISIBLE);
+            Percent.setVisibility(View.VISIBLE);
+            Square.setVisibility(View.VISIBLE);
+            Factor.setVisibility(View.VISIBLE);
+            sin.setVisibility(View.VISIBLE);
+            cos.setVisibility(View.VISIBLE);
+            tg.setVisibility(View.VISIBLE);
+            ctg.setVisibility(View.VISIBLE);
+            pi.setVisibility(View.VISIBLE);
+            exp.setVisibility(View.VISIBLE);
+            log.setVisibility(View.VISIBLE);
+            ln.setVisibility(View.VISIBLE);
+        }
+        else {
+            Num7.setVisibility(View.VISIBLE);
+            Num8.setVisibility(View.VISIBLE);
+            Num9.setVisibility(View.VISIBLE);
+            Mult.setVisibility(View.VISIBLE);
+            Num4.setVisibility(View.VISIBLE);
+            Num5.setVisibility(View.VISIBLE);
+            Num6.setVisibility(View.VISIBLE);
+            Minus.setVisibility(View.VISIBLE);
+            Num1.setVisibility(View.VISIBLE);
+            Num2.setVisibility(View.VISIBLE);
+            Num3.setVisibility(View.VISIBLE);
+            Plus.setVisibility(View.VISIBLE);
 
+            PowerOf.setVisibility(View.GONE);
+            Percent.setVisibility(View.GONE);
+            Square.setVisibility(View.GONE);
+            Factor.setVisibility(View.GONE);
+            sin.setVisibility(View.GONE);
+            cos.setVisibility(View.GONE);
+            tg.setVisibility(View.GONE);
+            ctg.setVisibility(View.GONE);
+            pi.setVisibility(View.GONE);
+            exp.setVisibility(View.GONE);
+            log.setVisibility(View.GONE);
+            ln.setVisibility(View.GONE);
         }
-        else{//show functions, but hide nums
-            for(int i = 0; i < layouts.size(); i++)
-                HideLayout(layouts.get(i));
-            SetWeight(layout_Fx,1);
-            SetWeight(functions,4);
-            ShowLayout(functions);
-            AlignTrigonomIconSize();
-        }
+
     }
+
+    private boolean IsFun = false;
 
     private void AlignTrigonomIconSize(){
         LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT,LinearLayout.LayoutParams.WRAP_CONTENT);
@@ -216,6 +278,24 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
 
+        DisplayMetrics displayMetrics = new DisplayMetrics();
+        getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
+
+        float screenWidthInDp = displayMetrics.widthPixels / displayMetrics.density;
+        float screenHeightInDp = displayMetrics.heightPixels / displayMetrics.density;
+
+        float maxDp = Math.max(screenWidthInDp, screenHeightInDp);
+        float fontSize = maxDp / 10;
+
+        float fontSizeInSp = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, fontSize, getResources().getDisplayMetrics());
+        int resId = getResources().getIdentifier("universal_fsize", "dimen", getPackageName());
+        getResources().getDimension(resId);
+        Resources resources = getResources();
+        DisplayMetrics metrics = resources.getDisplayMetrics();
+        android.content.res.Configuration configuration = resources.getConfiguration();
+        configuration.fontScale = fontSizeInSp;
+        resources.updateConfiguration(configuration, metrics);
+
 
 //        Back.setImageResource(R.drawable.back);
 
@@ -233,6 +313,9 @@ public class MainActivity extends AppCompatActivity {
         Num7 = findViewById(R.id.Num7);
         Num8 = findViewById(R.id.Num8);
         Num9 = findViewById(R.id.Num9);
+
+        //float f = Num0.getTextSize();
+
 
         Back = findViewById(R.id.Back);
         C = findViewById(R.id.C);
@@ -261,13 +344,13 @@ public class MainActivity extends AppCompatActivity {
         log =  findViewById(R.id.Log);
         ln =  findViewById(R.id.Ln);
 
-        functions = findViewById(R.id.functions);
-        layout_Fx = findViewById(R.id.linear_layout_Fx);
-        _789_ = findViewById(R.id._789_);
-        _456_ = findViewById(R.id._456_);
-        _123_ = findViewById(R.id._123_);
-        _0_ = findViewById(R.id._0_);
-        _Trigonometry_ =findViewById(R.id._Trigonometry_);
+        //functions = findViewById(R.id.functions);
+//        layout_Fx = findViewById(R.id.linear_layout_Fx);
+//        _789_ = findViewById(R.id._789_);
+//        _456_ = findViewById(R.id._456_);
+//        _123_ = findViewById(R.id._123_);
+//        _0_ = findViewById(R.id._0_);
+//        _Trigonometry_ =findViewById(R.id._Trigonometry_);
 
         layouts.add(_789_);layouts.add(_456_);layouts.add(_123_);//layouts.add(_0_);
 

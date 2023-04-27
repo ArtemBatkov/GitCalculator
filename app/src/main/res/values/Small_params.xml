@@ -34,7 +34,7 @@
         <!--Fx Layout Constraint-->
 
         <!--Buttons-->
-        <dimen name="Nums_txtsize_small">50sp</dimen>
+        <dimen name="Nums_txtsize_small">60sp</dimen>
 
     <!--Layout functions-->
     <dimen name="layout_function_MargBottom_small">10dp</dimen>
