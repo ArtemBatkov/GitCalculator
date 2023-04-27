@@ -1,6 +1,20 @@
 # GitCalculator
 
-  Hello, my dear watchers :)
+##  Hello. This is a design update for the calculator. Code contains layout updates, font updates and some new things. Now it has a rubber layout instead of the split one.
+
+### Version 2. Design improvements.
+
+Main Page and Function pop-up Pages
+<div>
+  <img src="https://user-images.githubusercontent.com/110242091/234879249-13f94ef7-7e24-4549-9be0-9471983efdaf.png" alt="Main Page" width="350"/>
+  <img src="https://user-images.githubusercontent.com/110242091/234879636-820eb39b-97f2-4180-a65d-547fd8cee336.png" alt="Function pop-up" width="350"/>
+</div>
+
+<pre>
+DOWNLOAD NEW VERSION 2 HERE:   https://github.com/ArtemBatkov/GitCalculator/blob/ReMakeNewDesign/app-debug.apk
+</pre>
+
+---
   
                                                        DISCRIPTION                                                   
   A calculator is an app, which help us to make some daily computing. This app is being presented to your attention. 
@@ -16,7 +30,7 @@ If you want to know how much percent is on the value, you should to use the mult
 we have to type "5*50%", and the answer will be 2.50. Otherwise, a number with percent will divide by 100. For example, 5 + 50% = 5 + 50/100 = 5.5. Remember that. 
 General Recommendation is ALWAYS CLOSE ALL BRACKETS to have a right answer. 
 
-                                                        SCREENSHOTS
+                                                        SCREENSHOTS VERSION 1
    1) SAMSUNG GRAND PRIME SCREENS. ANDROID 5.1, API 21.    
     ![Samsung GrandPrime Screen_1](https://user-images.githubusercontent.com/110242091/184124996-bcc0b357-2ce0-4cc0-8e14-2a1da30cbec9.png)
     ![Samsung GrandPrime Screen_2](https://user-images.githubusercontent.com/110242091/184125003-c14c2f17-fe1a-4f15-891a-cfb08e1c4bfa.png)
